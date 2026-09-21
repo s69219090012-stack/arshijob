@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>บทเรียนประจำวิชา</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="top-bar">
+    <a class="btn-history" href="page/JOBJOBSHISHI.html" style="text-decoration: none;">ประวัติผู้จัดทำ</a>
+</div>
+
+<h1>บทเรียนประจำวิชา</h1>
+
+<div class="grid" id="lesson-grid"></div>
+
+<script>
+   const lessons = [
+
+    {
+        title: "บทที่ 1: พื้นฐานและกระบวนการทำงานของเว็บไซต์",
+        desc: "เรียนรู้ตัวแปร และประเภทของข้อมูลเบื้องต้น",
+        link: "page/lesson01.html"
+    },
+
+    {
+        title: "บทที่ 2: หลักการออกแบบเว็บไซต์",
+        desc: "การใช้ if-else ในการกำหนดเงื่อนไขของโปรแกรม",
+        link: "page/lesson02.html"
+    },
+
+    {
+        title: "บทที่ 3: การสร้างเว็บไซต์ด้วย HTML5",
+        desc: "เข้าใจการใช้งาน HTML5",
+        link: "page/lesson03.html"
+    },
+
+    {
+        title: "บทที่ 4: การจัดรูปแบบเว็บไซต์ด้วย CSS (Function)",
+        desc: "การสร้างและเรียกใช้css",
+        link: "page/lesson04.html"
+    },
+
+    {
+        title: "บทที่ 5: การจัดการข้อความและสื่อมัลติมีเดีย (Array/List)",
+        desc: "การนำเอาตัวอักษร ภาพ เสียง ภาพเคลื่อนไหว และวิดีโอมาจัดรูปแบบ บันทึก",
+        link: "page/lesson05.html"
+    },
+
+    {
+        title: "บทที่ 6: การสร้างตารางข้อมูล (File Handling)",
+        desc: "การจัดระเบียบและจัดโครงสร้างข้อมูลให้อยู่ในรูปแบบของแถว",
+        link: "page/lesson06.html"
+    },
+
+    {
+        title: "บทที่ 7: ระบบการเชื่อมโยง (OOP)",
+        desc: "การเชื่อมต่อคอมพิวเตอร์ อุปกรณ์ หรือระบบซอฟต์แวร์ต่าง ๆ เข้าด้วยกัน เพื่อให้สื่อสารและส่งข้อมูลหากันได้อัตโนมัติ",
+        link: "page/lesson07.html"
+    },
+
+     {
+        title: "บทที่ 8: การออกแบบและสร้างฟอรม์ ",
+        desc: "การออกแบบและการสร้างฟอรม์ให้ถูกต้อง",
+        link: "page/lesson07.html"
+    },
+
+     {
+        title: "บทที่ 9: Javascript ",
+        desc: "การสร้างและการใช้ Javascript",
+        link: "page/lesson07.html"
+    }
+    
+];
+
+
+const grid = document.getElementById("lesson-grid");
+    grid.innerHTML = lessons.map(item => `
+        <div class="card">
+            <h2>${item.title}</h2>
+            <p>${item.desc}</p>
+             <a
+            class="enter-btn"
+            href="${item.link}">
+            เข้าสู่บทเรียน
+        </a>
+        </div>
+    `).join("");
+</script>
+
+</body>
+</html>
