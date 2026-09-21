@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>บทที่ 1: พื้นฐานและกระบวนการทำงานของเว็บไซต์</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: "Noto Sans Thai", "Inter", -apple-system, sans-serif;
+        background-color: #f7f4f0;
+        margin: 0;
+        padding: 0 0 60px 0;
+        color: #4a3e3d;
+        line-height: 1.7;
+    }
+
+    .banner {
+        background-color: #6f4e37;
+        color: #faf6f0;
+        padding: 32px 32px;
+        border-bottom: 3px solid #8d6e63;
+    }
+
+    .banner .chapter {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0;
+        letter-spacing: 0.5px;
+    }
+
+    .banner .subtitle {
+        font-size: 16px;
+        margin: 6px 0 0 0;
+        font-weight: 300;
+        opacity: 0.9;
+    }
+
+    .top-bar {
+        padding: 16px 32px 0 32px;
+    }
+
+    .btn-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #8d6e63;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: background-color 0.2s ease;
+    }
+
+    .btn-back:hover {
+        background-color: #6f4e37;
+    }
+
+    .content {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 24px 20px;
+    }
+
+    .section-title {
+        background-color: #e8ded5;
+        color: #5c4033;
+        font-size: 17px;
+        font-weight: 600;
+        padding: 10px 16px;
+        border-radius: 6px;
+        margin: 32px 0 16px 0;
+        border-left: 4px solid #8d6e63;
+    }
+
+    ul {
+        margin: 0;
+        padding-left: 22px;
+    }
+
+    li {
+        margin-bottom: 10px;
+        color: #4a3e3d;
+    }
+
+    code {
+        background-color: #efe8e1;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-family: "Consolas", monospace;
+        color: #7b4b3a;
+        font-size: 0.9em;
+        border: 1px solid #e0d5cb;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #ffffff;
+        margin-top: 16px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    th, td {
+        border: 1px solid #eee8e2;
+        padding: 12px 16px;
+        text-align: left;
+        vertical-align: top;
+        font-size: 14px;
+    }
+
+    th {
+        background-color: #8d6e63;
+        color: #ffffff;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    tr:nth-child(even) {
+        background-color: #fcfaf8;
+    }
+
+    td:first-child {
+        font-weight: 600;
+    }
+</style>
+</head>
+<body>
+
+<div class="banner">
+    <p class="chapter">บทที่ 1</p>
+    <p class="subtitle">พื้นฐานและกระบวนการทำงานของเว็บไซต์</p>
+</div>
+<div class="top-bar">
+    <a class="btn-back" href="../index.html">
+        <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+    </a>
+</div>
+
+<div class="content">
+
+    <div class="section-title">1. ความหมายและองค์ประกอบหลักของเว็บ</div>
+    <p>การพัฒนาเว็บไซต์จำเป็นต้องเข้าใจองค์ประกอบพื้นฐาน 3 ส่วนหลักที่ทำงานร่วมกัน โดยเปรียบเทียบเสมือน "หนังสือหนึ่งเล่ม" ดังนี้:</p>
+    <ul>
+        <li><b>Web Page (หน้ากระดาษ):</b> พื้นที่บรรจุเนื้อหาเฉพาะเรื่อง เช่น บทความหรือแกลเลอรีรูปภาพ เปรียบเหมือนหน้าแต่ละหน้าในหนังสือ</li>
+        <li><b>Website (หนังสือหนึ่งเล่ม):</b> การนำ Web Page หลาย ๆ หน้ามารวบรวมและเย็บเล่มเข้าด้วยกันเป็นเรื่องเดียว</li>
+        <li><b>Home Page (หน้าปกหนังสือ):</b> หน้าแรกที่เป็นจุดเริ่มต้นและเป็นส่วนที่ผู้ใช้งานจะพบเห็นเป็นอันดับแรกเสมอ</li>
+    </ul>
+
+    <div class="section-title">2. ประเภทของเว็บไซต์</div>
+    <p>สามารถแบ่งประเภทตามลักษณะการทำงานและโครงสร้างพื้นฐานออกเป็น 2 ประเภทหลัก</p>
+    <table>
+        <tr>
+            <th>ประเภทเว็บไซต์</th>
+            <th>ลักษณะเด่น</th>
+            <th>ข้อดี</th>
+            <th>ข้อเสีย</th>
+            <th>ความจำเป็น / การนำไปใช้ (So What?)</th>
+        </tr>
+        <tr>
+            <td>Static Website</td>
+            <td>เนื้อหาคงที่ ข้อมูลไม่เปลี่ยนตามผู้ใช้</td>
+            <td>ทำง่าย, โหลดเร็วมาก, ปลอดภัยสูง</td>
+            <td>แก้ไขข้อมูลยาก ต้องแก้ที่โค้ดทีละหน้า</td>
+            <td>เหมาะสำหรับ Portfolio หรือเว็บข้อมูลที่ไม่เปลี่ยนบ่อย (โฮสต์ฟรีได้บน GitHub Pages)</td>
+        </tr>
+        <tr>
+            <td>Dynamic Website</td>
+            <td>มีระบบหลังบ้าน (Backend) และฐานข้อมูล เนื้อหาเปลี่ยนตามผู้ใช้หรือเวลา</td>
+            <td>โต้ตอบกับผู้ใช้ได้, จัดการข้อมูลจำนวนมากได้ง่าย</td>
+            <td>ซับซ้อนกว่า, ต้องดูแลฐานข้อมูล</td>
+            <td>เหมาะสำหรับร้านค้าออนไลน์ (E-commerce) หรือโซเชียลมีเดีย (มีค่าเช่า Server และฐานข้อมูล)</td>
+        </tr>
+    </table>
+
+    <div class="section-title">3. กระบวนการทำงานของเว็บไซต์</div>
+    <p>ทำงานผ่านระบบ Client-Server Model ซึ่งเปรียบเทียบได้กับการสั่งอาหารในร้าน:</p>
+    <ul>
+        <li><b>Request (สั่งอาหาร):</b> ผู้ใช้พิมพ์ชื่อเว็บหรือกดลิงก์ผ่าน Web Browser ซึ่งทำหน้าที่เป็น Client (ลูกค้า) ส่งคำขอผ่านอินเทอร์เน็ตไปที่ Server</li>
+        <li><b>Processing (ปรุงอาหาร):</b> Server (พ่อครัว) ทำหน้าที่ตรวจสอบไฟล์ ดึงข้อมูลจากฐานข้อมูล และปรุงออกมาเป็นไฟล์เว็บ</li>
+        <li><b>Response (เสิร์ฟ):</b> Server ส่งข้อมูลกลับมาในรูปแบบพิมพ์เขียวของโค้ด (HTML, CSS, JavaScript) ผ่านอินเทอร์เน็ต</li>
+        <li><b>Rendering (ลงมือทาน):</b> Web Browser (Client) นำไฟล์โค้ดมาอ่านและแปลงผลเป็นหน้าตาเว็บไซต์ที่สวยงาม</li>
+    </ul>
+
+    <div class="section-title">4. หลักการทำงานของ WWW และมาตรฐานการสื่อสาร</div>
+    <ul>
+        <li><b>URL (Uniform Resource Locator):</b> ที่อยู่หรือลิงก์ที่ระบุตำแหน่งของหน้าเว็บหรือไฟล์บนอินเทอร์เน็ตอย่างแม่นยำ</li>
+        <li><b>HTTP:</b> ส่งข้อมูลแบบข้อความธรรมดา (Plain Text/Cleartext) ไม่เข้ารหัส เสี่ยงต่อการถูกแอบดักข้อมูลระหว่างทาง (Man-in-the-Middle Attack)</li>
+        <li><b>HTTPS:</b> มาตรฐานความปลอดภัยสูง ทำงานบนระบบ SSL/TLS เพื่อเข้ารหัสข้อมูล (Encryption), รักษาความถูกต้องของข้อมูล (Data Integrity), และยืนยันตัวตน (Authentication) ผ่าน SSL Certificate เพื่อป้องกันเว็บปลอม (Phishing)</li>
+        <li><b>IP Address:</b> พิกัด GPS หรือเลขที่บ้านของคอมพิวเตอร์ (เช่น <code>172.217.161.100</code>) ที่เครื่องเข้าใจแต่จำยาก</li>
+        <li><b>Domain Name:</b> ชื่อบุคคลหรือชื่อบ้าน (เช่น <code>google.com</code>) ที่ตั้งขึ้นมาเพื่อให้มนุษย์จำง่าย</li>
+        <li><b>DNS (Domain Name System):</b> ทำหน้าที่เหมือน "สมุดโทรศัพท์" คอยแปลง Domain Name ให้เป็น IP Address เพื่อให้คอมพิวเตอร์ตามหาไฟล์ได้ถูกต้อง</li>
+    </ul>
+
+    <div class="section-title">5. เครื่องมือและส่วนขยายที่แนะนำ</div>
+    <p>Visual Studio Code (VS Code) เป็นมาตรฐานอุตสาหกรรมที่นักพัฒนาเลือกใช้เนื่องจากมีความเบาและยืดหยุ่น โดยมีส่วนขยาย (Extensions) ที่แนะนำแยกตามกลุ่มดังนี้</p>
+    <ul>
+        <li><b>Live Server:</b> จำลอง Local Server อัปเดตหน้าจอ UI แบบ Real-time ทันทีที่กด Save โดยไม่ต้องกด F5</li>
+        <li><b>Live Preview:</b> แสดงหน้าต่างพรีวิวเว็บข้างในโปรแกรม VS Code ควบคู่กับหน้าต่างเขียนโค้ดโดยไม่ต้องสลับจอ</li>
+        <li><b>Thunder Client:</b> เครื่องมือทดสอบการรับส่งข้อมูลผ่านโปรโตคอล HTTP/HTTPS (เช่น การทดสอบ API) ในโปรแกรม</li>
+        <li><b>Prettier Code Formatter:</b> จัดรูปแบบและย่อหน้าโครงสร้างโค้ดให้อัตโนมัติเมื่อกดบันทึก</li>
+        <li><b>Error Lens:</b> เจาะลึกระบุตำแหน่งและแสดงข้อความแจ้งเตือนคำสั่งที่เขียนผิดที่ท้ายบรรทัดทันที</li>
+        <li><b>Code Spell Checker:</b> ขีดเส้นใต้เตือนคำผิดภาษาอังกฤษ ลดปัญหา Syntax Error จากการพิมพ์ผิด</li>
+        <li><b>Auto Rename Tag:</b> เมื่อแก้ไขชื่อใน "แท็กเปิด" ระบบจะเปลี่ยนชื่อใน "แท็กปิด" ที่คู่กันให้อัตโนมัติ</li>
+        <li><b>Auto Close Tag:</b> เติม "แท็กปิด" ให้อัตโนมัติทันทีที่พิมพ์แท็กเปิดเสร็จ</li>
+        <li><b>HTML CSS Support:</b> ช่วยเดาและแนะนำชื่อคลาส (Class) หรือไอดี (ID) ของ CSS ในขณะที่กำลังพิมพ์</li>
+    </ul>
+
+</div>
+
+</body>
+</html>

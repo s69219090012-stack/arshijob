@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แนะนำตัว - อารักษ์ ตรีจันทร์</title>
+
+    <!-- Font Awesome สำหรับไอคอน -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: hwb(220 73% 21%);
+            background-image:
+                radial-gradient(circle at 15% 10%, rgba(165, 111, 99, 0.20), transparent 35%),
+                radial-gradient(circle at 85% 90%, rgba(217, 155, 127, 0.12), transparent 40%);
+            color: #000000;
+            font-family: "Sarabun", "Tahoma", sans-serif;
+            margin: 0;
+            padding: 24px 20px 48px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .top-bar {
+            width: 100%;
+            max-width: 640px;
+            margin-bottom: 16px;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: #eef1f6;
+            background-color: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.15s ease;
+        }
+
+        .btn-back:hover {
+            background-color: rgba(255, 255, 255, 0.22);
+        }
+
+        .card {
+            width: 100%;
+            max-width: 640px;
+            background-color: hsl(218, 32%, 88%);
+            border: 1px solid rgba(217, 155, 127, 0.35);
+            border-radius: 16px;
+            padding: 40px 36px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .avatar {
+            width: 84px;
+            height: 84px;
+            border-radius: 50%;
+            background-color: #0056b3;
+            border: 3px solid #0056b3;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        h1 {
+            color: #0056b3;
+            font-size: 30px;
+            margin: 0 0 4px 0;
+            letter-spacing: 0.3px;
+        }
+
+        .slogan {
+            display: inline-block;
+            color: #ffffff;
+            background-color: #0056b3;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 999px;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            color: #0056b3;
+            font-size: 15px;
+            margin: 8px 0 0 0;
+        }
+
+        section {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(217, 155, 127, 0.28);
+        }
+
+        section:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        h2 {
+            color: #0056b3;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 0 0 12px 0;
+        }
+
+        p {
+            color: hsl(0, 0%, 0%);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        ul, ol {
+            margin: 0;
+            padding-left: 20px;
+            color: hsl(0, 0%, 0%);
+            line-height: 2;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li::before {
+            content: "▸";
+            color: #0056b3;
+            margin-right: 8px;
+        }
+
+        ol li::marker {
+            color: #0056b3;
+            font-weight: 700;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px 32px;
+        }
+
+        @media (max-width: 480px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-line {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: hsl(0, 0%, 0%);
+            margin-bottom: 8px;
+            font-size: 14.5px;
+        }
+
+        .contact-line i {
+            color: #0056b3;
+            width: 18px;
+        }
+
+        /* ปุ่มแอ็กชันเปิดรูปภาพ/วิดีโอ */
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: transparent;
+            color: #0056b3;
+            border: 1.5px solid #0056b3;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.15s ease;
+        }
+
+        .btn-action:hover {
+            background-color: #0056b3;
+            color: #ffffff;
+        }
+
+        /* ไอคอนสื่อสังคมออนไลน์ */
+        .socials {
+            display: flex;
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .socials a {
+            color: #0056b3;
+            font-size: 30px;
+            transition: color 0.15s ease, transform 0.15s ease;
+            line-height: 1;
+        }
+
+        .socials a:hover {
+            transform: translateY(-2px);
+        }
+
+        .fa-square-facebook:hover {
+            color: #1877f2;
+        }
+
+        .fa-square-instagram:hover {
+            color: #e1306c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <a class="btn-back" href="../index.html">
+            <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+        </a>
+    </div>
+
+    <div class="card">
+
+        <!-- ส่วนโปรไฟล์ -->
+        <section>
+            <div class="avatar">
+                <img src="../pic/WIN_20260917_14_36_26_Pro.jpg" alt="รูปโปรไฟล์">
+            </div>
+            <h1>อารักษ์ ตรีจันทร์</h1>
+            <span class="slogan">ใจไม่ถึงพึ่งไม่ได้</span>
+            <p class="tagline">เป็นคนที่ชอบเล่นกีฬา (ฟุตบอล, ฟุตซอล, บาส)</p>
+        </section>
+
+        <!-- ส่วนเรื่องเกี่ยวกับตัวเอง -->
+        <section>
+            <h2>เรื่องเกี่ยวกับตัวเอง</h2>
+            <p>ชอบเล่นกีฬา ทำงานหาเงิน และหาประสบการณ์ใหม่ๆ ในการทำอาหาร</p>
+        </section>
+
+        <!-- ส่วนทักษะและความสนใจ -->
+        <section>
+            <h2>ทักษะหรือความสนใจ</h2>
+            <div class="skills-grid">
+                <ul>
+                    <li>เล่นกีฬาเก่ง</li>
+                    <li>ทำงานหาเงิน</li>
+                </ul>
+                <ol type="1" start="1">
+                    <li>เป็นเชฟ</li>
+                    <li>เป็นคนขยัน</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ส่วนติดต่อ -->
+        <section>
+            <h2>ข้อมูลสำหรับติดต่อ</h2>
+            <div class="contact-line">
+                <i class="fa-solid fa-phone"></i> 0970694595
+            </div>
+            <div class="contact-line">
+                <i class="fa-solid fa-envelope"></i> arshijing@gmail.com
+            </div>
+
+            <!-- ปุ่มเปิดรูปภาพและวิดีโอ (อยู่ระหว่างอีเมลกับโซเชียล) -->
+            <div class="actions">
+                <button class="btn-action" onclick="window.open('ID_24922_5785b604e012b.jpg', '_blank')">
+                    <i class="fa-solid fa-image"></i> รูปภาพ
+                </button>
+                <button class="btn-action" onclick="window.open('Download.mp4', '_blank')">
+                    <i class="fa-solid fa-video"></i> วิดีโอ
+                </button>
+            </div>
+
+            <!-- ไอคอน Facebook และ Instagram -->
+            <div class="socials">
+                <a href="https://www.facebook.com" target="_blank" title="Facebook">
+                    <i class="fa-brands fa-square-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" title="Instagram">
+                    <i class="fa-brands fa-square-instagram"></i>
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

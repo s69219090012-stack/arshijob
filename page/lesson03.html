@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>บทที่ 3: การสร้างเว็บไซต์ด้วย HTML5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: "Noto Sans Thai", "Inter", -apple-system, sans-serif;
+        background-color: #f7f4f0;
+        margin: 0;
+        padding: 0 0 60px 0;
+        color: #4a3e3d;
+        line-height: 1.7;
+    }
+
+    .banner {
+        background-color: #6f4e37;
+        color: #faf6f0;
+        padding: 32px 32px;
+        border-bottom: 3px solid #8d6e63;
+    }
+
+    .banner .chapter {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0;
+        letter-spacing: 0.5px;
+    }
+
+    .banner .subtitle {
+        font-size: 16px;
+        margin: 6px 0 0 0;
+        font-weight: 300;
+        opacity: 0.9;
+    }
+
+    .top-bar {
+        padding: 16px 32px 0 32px;
+    }
+
+    .btn-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #8d6e63;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: background-color 0.2s ease;
+    }
+
+    .btn-back:hover {
+        background-color: #6f4e37;
+    }
+
+    .content {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 24px 20px;
+    }
+
+    .section-title {
+        background-color: #e8ded5;
+        color: #5c4033;
+        font-size: 17px;
+        font-weight: 600;
+        padding: 10px 16px;
+        border-radius: 6px;
+        margin: 32px 0 16px 0;
+        border-left: 4px solid #8d6e63;
+    }
+
+    ul {
+        margin: 0;
+        padding-left: 22px;
+    }
+
+    li {
+        margin-bottom: 10px;
+        color: #4a3e3d;
+    }
+
+    code {
+        background-color: #efe8e1;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-family: "Consolas", monospace;
+        color: #7b4b3a;
+        font-size: 0.9em;
+        border: 1px solid #e0d5cb;
+    }
+</style>
+</head>
+<body>
+
+<div class="banner">
+    <p class="chapter">บทที่ 3</p>
+    <p class="subtitle">การสร้างเว็บไซต์ด้วย HTML5</p>
+</div>
+<div class="top-bar">
+    <a class="btn-back" href="../index.html">
+        <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+    </a>
+</div>
+
+<div class="content">
+
+    <div class="section-title">1. พื้นฐานภาษา HTML5 และโครงสร้างไฟล์มาตรฐาน</div>
+    <p>ภาษา HTML5 ทำหน้าที่เป็นโครงสร้างหลักของหน้าเว็บ (เปรียบเหมือนเสาเข็มและผนังบ้าน) เวอร์ชันนี้รองรับมัลติมีเดีย (วิดีโอ/เสียง) ได้ในตัว และมี Semantic Tags (แท็กสื่อความหมาย) ที่ช่วยเรื่อง SEO และผู้พิการทางสายตา โครงสร้างพื้นฐาน 3 ส่วนหลัก:</p>
+    <ul>
+        <li><code>&lt;!DOCTYPE html&gt;</code> และ <code>&lt;html&gt;</code>: ประกาศมาตรฐาน HTML5 ที่บรรทัดแรกสุด และใช้แท็ก <code>&lt;html&gt;</code> ครอบคลุมเนื้อหาเว็บทั้งหมด</li>
+        <li><code>&lt;head&gt;</code> และ <code>&lt;title&gt;</code>: ส่วนควบคุมหลังบ้าน (ไม่แสดงบนหน้าจอ) ใช้เก็บข้อมูลเทคนิค และมีแท็ก <code>&lt;title&gt;</code> สำหรับแสดงชื่อบนแท็บของเบราว์เซอร์</li>
+        <li><code>&lt;body&gt;</code>: พื้นที่เนื้อหาหลัก ส่วนที่แสดงผลให้ผู้ใช้งานมองเห็นและโต้ตอบได้ เช่น ข้อความ รูปภาพ หรือปุ่มกด</li>
+        <li><b>การแบ่งสัดส่วนเนื้อหา:</b> ใช้แท็กทั่วไปอย่าง <code>div</code> ในการแบ่งกลุ่มข้อความ (เปรียบเหมือนฉากกั้นห้อง) หรือเปลี่ยนมาใช้แท็กที่มีความหมายของ HTML5 เช่น <code>header</code>, <code>main</code>, <code>footer</code> เพื่อความเป็นมืออาชีพและดีต่อระบบค้นหา</li>
+    </ul>
+
+            <img src="c:\Users\pc\Downloads\รู๔ปไรฃ.jpg" alt="ตัวอย่างโค้ด Internal CSS" class="code-shot">
+    <p class="code-caption">ตัวอย่างการเขียน พื้นฐานภาษา HTML5 และโครงสร้างไฟล์มาตรฐาน
+
+
+    <div class="section-title">2. การใช้งาน Tag และ Attribute จัดการข้อความ</div>
+    <ul>
+        <li><b>Tag & Attribute:</b> แท็กคือคำสั่งควบคุมที่มักมาเป็นคู่ (แท็กเปิด-แท็กปิด) ส่วนแอตทริบิวต์คือคุณสมบัติเสริมที่เติมในแท็กเปิดเพื่อระบุรายละเอียดเฉพาะเจาะจง</li>
+        <li><b>Heading (h1 ถึง h6):</b> แท็กพาดหัวแบ่งตามลำดับความสำคัญ โดย h1 สำคัญที่สุดและควรมีเพียงตัวเดียวในแต่ละหน้าเว็บเพื่อผลดีต่อ SEO</li>
+        <li><b>Paragraph (p):</b> ใช้จัดกลุ่มข้อความยาวๆ เป็นย่อหน้า โดยเบราว์เซอร์จะเว้นระยะห่างบน-ล่างให้อัตโนมัติ</li>
+        <li><b>Line Break (br):</b> แท็กเดี่ยวที่ใช้บังคับขึ้นบรรทัดใหม่ เนื่องจากการกด Enter ในโปรแกรมเขียนโค้ดจะไม่แสดงผลบนหน้าเว็บจริง</li>
+    </ul>
+
+    <div class="section-title">3. การสร้างรายการข้อมูล (Lists)</div>
+    <p>การใช้แท็กรายการช่วยจัดข้อมูลให้เป็นระเบียบ อ่านง่าย และส่งเสริมการทำ Semantic HTML แบ่งเป็น 3 รูปแบบหลัก:</p>
+    <ul>
+        <li><b>รายการแบบไม่มีลำดับ (ul):</b> เหมาะกับข้อมูลที่สลับลำดับได้ แสดงผลเริ่มต้นเป็นจุดวงกลมทึบสีดำ (Disc) โดยมีแท็ก <code>li</code> ครอบข้อมูลย่อยแต่ละข้อ</li>
+        <li><b>รายการแบบมีลำดับ (ol):</b> เหมาะกับข้อมูลที่สลับขั้นตอนไม่ได้ เบราว์เซอร์จะรันตัวเลขให้อัตโนมัติ และมีแอตทริบิวต์เสริม เช่น <code>type</code>, <code>start</code>, <code>reversed</code></li>
+        <li><b>รายการแบบซ้อนทับกัน (Nested Lists):</b> การนำรายการย่อยไปซ้อนไว้ ภายในแท็ก <code>li</code> ของรายการหลัก เพื่อสร้างหมวดหมู่ย่อย</li>
+    </ul>
+
+    <div class="section-title">4. การตั้งค่าและใช้งานส่วนขยาย (Extensions) ใน VS Code</div>
+    <ul>
+        <li><b>วิธีเลือกติดตั้งอย่างปลอดภัย:</b> สังเกตเครื่องหมายติ๊กถูก (Verified Publisher) และยอดดาวน์โหลดที่ควรมีหลักล้านขึ้นไป</li>
+        <li><b>Prettier:</b> จัดย่อหน้าและเว้นวรรคโค้ดให้อัตโนมัติเมื่อกดบันทึก</li>
+        <li><b>Error Lens:</b> แจ้งเตือนข้อผิดพลาดและบั๊กสีแดง/เหลืองที่ท้ายบรรทัดทันทีที่พิมพ์ผิด</li>
+        <li><b>Auto Rename Tag:</b> เปลี่ยนชื่อแท็กปิดให้อัตโนมัติเมื่อเราแก้ไขแท็กเปิด</li>
+        <li><b>Auto Close Tag:</b> เติมแท็กปิดให้ทันทีเมื่อพิมพ์แท็กเปิดเสร็จ</li>
+        <li><b>Live Server:</b> ส่วนขยายที่ช่วยจำลองคอมพิวเตอร์ให้เป็น Local Server (HTTP Protocol) แทนการเปิดไฟล์ตรงๆ (File Protocol) ทำให้หน้าจอแสดงผลอัปเดตแบบ Realtime และสามารถทดสอบฟังก์ชันขั้นสูงได้อย่างแม่นยำเหมือนบนอินเทอร์เน็ตจริง</li>
+    </ul>
+
+</div>
+
+</body>
+</html>

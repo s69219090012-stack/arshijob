@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>บทที่ 9: JavaScript สมองกลผู้เนรมิตชีวิตให้เว็บไซต์</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: "Noto Sans Thai", "Inter", -apple-system, sans-serif;
+        background-color: #f7f4f0;
+        margin: 0;
+        padding: 0 0 60px 0;
+        color: #4a3e3d;
+        line-height: 1.7;
+    }
+
+    .banner {
+        background-color: #6f4e37;
+        color: #faf6f0;
+        padding: 32px 32px;
+        border-bottom: 3px solid #8d6e63;
+    }
+
+    .banner .chapter {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0;
+        letter-spacing: 0.5px;
+    }
+
+    .banner .subtitle {
+        font-size: 16px;
+        margin: 6px 0 0 0;
+        font-weight: 300;
+        opacity: 0.9;
+    }
+
+    .top-bar {
+        padding: 16px 32px 0 32px;
+    }
+
+    .btn-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #8d6e63;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: background-color 0.2s ease;
+    }
+
+    .btn-back:hover {
+        background-color: #6f4e37;
+    }
+
+    .content {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 24px 20px;
+    }
+
+    .section-title {
+        background-color: #e8ded5;
+        color: #5c4033;
+        font-size: 17px;
+        font-weight: 600;
+        padding: 10px 16px;
+        border-radius: 6px;
+        margin: 32px 0 16px 0;
+        border-left: 4px solid #8d6e63;
+    }
+
+    ul {
+        margin: 0;
+        padding-left: 22px;
+    }
+
+    li {
+        margin-bottom: 10px;
+        color: #4a3e3d;
+    }
+
+    code {
+        background-color: #efe8e1;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-family: "Consolas", monospace;
+        color: #7b4b3a;
+        font-size: 0.9em;
+        border: 1px solid #e0d5cb;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #ffffff;
+        margin-top: 16px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    th, td {
+        border: 1px solid #eee8e2;
+        padding: 12px 16px;
+        text-align: left;
+        vertical-align: top;
+        font-size: 14px;
+    }
+
+    th {
+        background-color: #8d6e63;
+        color: #ffffff;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    tr:nth-child(even) {
+        background-color: #fcfaf8;
+    }
+
+    td:first-child {
+        font-weight: 600;
+    }
+</style>
+</head>
+<body>
+
+<div class="banner">
+    <p class="chapter">บทที่ 9</p>
+    <p class="subtitle">JavaScript สมองกลผู้เนรมิตชีวิตให้เว็บไซต์</p>
+</div>
+<div class="top-bar">
+    <a class="btn-back" href="../index.html">
+        <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+    </a>
+</div>
+
+<div class="content">
+
+    <div class="section-title">1. บทบาทของเทคโนโลยีเว็บ (Web Architecture Elements)</div>
+    <p>การพัฒนาเว็บไซต์เปรียบเสมือนการสร้างหุ่นยนต์จักรกลซึ่งประกอบด้วย 3 ส่วนสำคัญ ดังนี้:</p>
+    <ul>
+        <li><b>โครงเหล็ก (HTML):</b> โครงสร้างและชิ้นส่วนพื้นฐานที่ประกอบกันเป็นรูปร่าง (Structure)</li>
+        <li><b>เสื้อผ้าและสีสัน (CSS):</b> การตกแต่งผิวภายนอกให้ดูสวยงามและเป็นระเบียบ (Presentation)</li>
+        <li><b>สมองกล (JavaScript):</b> ระบบไฟฟ้าที่สั่งการให้ขยับ โต้ตอบ และมีความคิด (Behavior) เปลี่ยนหน้าเว็บที่ตายตัวให้กลายเป็นแอปพลิเคชันที่มีชีวิตชีวาและโต้ตอบได้แบบเรียลไทม์</li>
+    </ul>
+
+    <div class="section-title">2. รูปแบบการติดตั้งสคริปต์ (Integration Methods)</div>
+    <p>การเชื่อมต่อ JavaScript เข้ากับหน้าเว็บไซต์สามารถทำได้ 2 รูปแบบหลัก:</p>
+    <table>
+        <tr>
+            <th>รูปแบบ</th>
+            <th>การทำงาน / โครงสร้าง</th>
+            <th>เปรียบเทียบ</th>
+            <th>การใช้งาน</th>
+        </tr>
+        <tr>
+            <td>Internal Script</td>
+            <td>พิมพ์โค้ดลงในแท็ก <code>&lt;script&gt;</code> โดยวางไว้ก่อนปิด <code>&lt;/body&gt;</code></td>
+            <td>โน้ตคำสั่งสั้นๆ แปะไว้บนตู้เย็น</td>
+            <td>เหมาะกับโค้ดขนาดเล็กที่ทำงานเฉพาะเจาะจงแค่หน้าเว็บเดียว</td>
+        </tr>
+        <tr>
+            <td>External Script</td>
+            <td>สร้างไฟล์ <code>.js</code> แยก แล้วเชื่อมด้วย <code>&lt;script src="main.js"&gt;&lt;/script&gt;</code></td>
+            <td>คู่มือการทำงานแยกเป็นเล่มต่างหาก</td>
+            <td>มาตรฐานมืออาชีพ โค้ดสะอาด นำไปใช้ร่วมกับหน้าเว็บอื่นๆ ได้ทันที</td>
+        </tr>
+    </table>
+
+    <div class="section-title">3. ช่องทางการสื่อสารของ JavaScript</div>
+    <ul>
+        <li><b><code>alert()</code> (กล่องป๊อปอัปแจ้งเตือน):</b> แสดงผลเด้งขึ้นมากลางหน้าจอ บังคับให้ผู้ใช้กด OK ส่งผลหยุดการทำงานของเว็บทั้งหมดชั่วคราว เหมาะสำหรับแจ้งเตือนผู้ใช้งานทั่วไป (User)</li>
+        <li><b><code>console.log()</code> (ข้อความลับหลังบ้าน):</b> พิมพ์ข้อความลงในเครื่องมือ Console (F12) ทำงานเงียบๆ ไม่รบกวนการอ่านเว็บ เหมาะสำหรับนักพัฒนาโปรแกรม (Developer) เพื่อทดสอบโค้ด</li>
+    </ul>
+
+    <div class="section-title">4. การทำงานกับ DOM (Document Object Model)</div>
+    <p>DOM เปรียบเสมือน "แผงควบคุมวงจรไฟฟ้าของเว็บไซต์" โดยมีกระบวนการและหน้าที่สำคัญดังนี้:</p>
+    <ul>
+        <li><b>การแปลงร่างของ HTML:</b> ทันทีที่เบราว์เซอร์อ่านโค้ดเสร็จ จะสร้าง DOM ขึ้นมาครอบทับเว็บไซต์</li>
+        <li><b>สวิตช์และปุ่มกด:</b> แท็ก HTML ทุกตัวจะถูกจำลองเป็นสวิตช์บนแผงควบคุม (เช่น <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;button&gt;</code>, <code>&lt;div&gt;</code>)</li>
+        <li><b>หน้าที่ของ JavaScript:</b> เอื้อมมือเข้าไปสับสวิตช์ สั่งให้หน้าเว็บขยับหรือเปลี่ยนสีได้แบบเรียลไทม์โดยไม่ต้องกดรีเฟรช</li>
+    </ul>
+
+    <div class="section-title">5. ขั้นตอนการควบคุม DOM ผ่านโค้ด</div>
+    <ul>
+        <li><b>ขั้นตอนที่ 1 (ล็อกเป้าหมาย):</b> ใช้คำสั่ง <code>document.getElementById('id_name')</code> เปรียบเสมือนการ "ประกาศเรียกชื่อพนักงานผ่านเสียงตามสาย" แท็ก HTML ที่มี ID ตรงกันจะถูกดึงตัวออกมารอรับคำสั่งทันที</li>
+        <li><b>ขั้นตอนที่ 2 (เปลี่ยนแปลงข้อมูล):</b> ใช้คำสั่ง <code>.innerHTML = 'ข้อความใหม่'</code> เปรียบเสมือนการเดินไปที่ "กระดานไวท์บอร์ด" เพื่อลบข้อความเดิมทิ้งแล้วเขียนข้อความใหม่ทับลงไป ทำให้ข้อมูลเปลี่ยนทันทีโดยไม่ต้องโหลดหน้าเว็บใหม่</li>
+    </ul>
+
+    <div class="section-title">6. ตัวกระตุ้นและการดักจับพฤติกรรมผู้ใช้ (Events)</div>
+    <p>Event คือจุดเริ่มต้นของวงจรการโต้ตอบที่คอยเฝ้ารอพฤติกรรมของผู้ใช้งาน:</p>
+    <ul>
+        <li><b>Mouse Events:</b>
+            <ul>
+                <li><code>onclick</code>: สัญญาณกริ่งประตู ทำงานเมื่อผู้ใช้คลิกปุ่มหรือวัตถุเพื่อปลุกชุดคำสั่ง (Function) ให้ทำงาน</li>
+                <li><code>onmouseover</code>: ทำงานทันทีเมื่อนำเมาส์ลากไปวางพาด (ยังไม่คลิก) ใช้ดึงดูดความสนใจ</li>
+                <li><code>onmouseout</code>: ทำงานทันทีเมื่อลากเมาส์ออกจากวัตถุ ใช้คืนค่ารูปลักษณ์เดิม</li>
+            </ul>
+        </li>
+        <li><b>Keyboard Events:</b>
+            <ul>
+                <li><code>onkeydown</code>: ทำงานในเสี้ยววินาทีที่กดปุ่มลงไป</li>
+                <li><code>onkeyup</code>: ทำงานทันทีเมื่อปล่อยนิ้วขึ้น เหมาะสำหรับการตรวจสอบข้อมูลแบบสดๆ (Real-time Validation) ขณะพิมพ์ เช่น การตรวจสอบรหัสผ่าน</li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="section-title">7. เหตุผลที่ต้องใช้ JavaScript (Validation)</div>
+    <p>เปรียบเทียบข้อจำกัดของระบบเดิมและการนำ JavaScript มาประยุกต์ใช้ในการตรวจสอบข้อมูล:</p>
+    <ul>
+        <li><b>ขีดจำกัดของ HTML5:</b> ตรวจสอบได้แค่กฎพื้นฐาน (เช่น ห้ามเว้นว่าง, กำหนดค่าต่ำสุด-สูงสุด) แต่ไม่สามารถเช็กความซับซ้อน เช่น ตรวจสอบว่ารหัสผ่าน 2 ช่องตรงกันหรือไม่</li>
+        <li><b>โซลูชันจาก JavaScript (Custom Validation):</b> ทำหน้าที่เหมือน "พนักงานรักษาความปลอดภัยสุดสมาร์ท" ที่ดึงข้อความขณะพิมพ์ (ใช้ <code>.value</code>) มาตรวจสอบด้วยเงื่อนไขอิสระ สร้างประสบการณ์ใช้งาน (UX) ที่ลื่นไหลและป้องกันข้อผิดพลาดได้ดีกว่า</li>
+    </ul>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>บทที่ 8: การออกแบบและสร้างฟอร์ม (Forms)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: "Noto Sans Thai", "Inter", -apple-system, sans-serif;
+        background-color: #f7f4f0;
+        margin: 0;
+        padding: 0 0 60px 0;
+        color: #4a3e3d;
+        line-height: 1.7;
+    }
+
+    .banner {
+        background-color: #6f4e37;
+        color: #faf6f0;
+        padding: 32px 32px;
+        border-bottom: 3px solid #8d6e63;
+    }
+
+    .banner .chapter {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0;
+        letter-spacing: 0.5px;
+    }
+
+    .banner .subtitle {
+        font-size: 16px;
+        margin: 6px 0 0 0;
+        font-weight: 300;
+        opacity: 0.9;
+    }
+
+    .top-bar {
+        padding: 16px 32px 0 32px;
+    }
+
+    .btn-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #8d6e63;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: background-color 0.2s ease;
+    }
+
+    .btn-back:hover {
+        background-color: #6f4e37;
+    }
+
+    .content {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 24px 20px;
+    }
+
+    .section-title {
+        background-color: #e8ded5;
+        color: #5c4033;
+        font-size: 17px;
+        font-weight: 600;
+        padding: 10px 16px;
+        border-radius: 6px;
+        margin: 32px 0 16px 0;
+        border-left: 4px solid #8d6e63;
+    }
+
+    ul {
+        margin: 0;
+        padding-left: 22px;
+    }
+
+    li {
+        margin-bottom: 10px;
+        color: #4a3e3d;
+    }
+
+    code {
+        background-color: #efe8e1;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-family: "Consolas", monospace;
+        color: #7b4b3a;
+        font-size: 0.9em;
+        border: 1px solid #e0d5cb;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #ffffff;
+        margin-top: 16px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    th, td {
+        border: 1px solid #eee8e2;
+        padding: 12px 16px;
+        text-align: left;
+        vertical-align: top;
+        font-size: 14px;
+    }
+
+    th {
+        background-color: #8d6e63;
+        color: #ffffff;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    tr:nth-child(even) {
+        background-color: #fcfaf8;
+    }
+
+    td:first-child {
+        font-weight: 600;
+    }
+</style>
+</head>
+<body>
+
+<div class="banner">
+    <p class="chapter">บทที่ 8</p>
+    <p class="subtitle">การออกแบบและสร้างฟอร์ม (Forms)</p>
+</div>
+<div class="top-bar">
+    <a class="btn-back" href="../index.html">
+        <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+    </a>
+</div>
+
+<div class="content">
+
+    <div class="section-title">1. องค์ประกอบและโครงสร้างของฟอร์ม (Form Structure)</div>
+    <p>ฟอร์ม (Form) ทำหน้าที่เป็นพื้นที่รับฟังข้อมูลจากผู้ใช้งานเพื่อสร้างการสื่อสารแบบสองทาง (Two-way Communication) โดยประกอบด้วยส่วนสำคัญดังนี้:</p>
+    <ul>
+        <li><b>โครงสร้างแท็ก <code>&lt;form&gt;</code>:</b> เปรียบเสมือน "ซองจดหมาย" หรือ "กล่องพัสดุ" ช่องกรอกข้อมูลและปุ่มกดทั้งหมดต้องบรรจุอยู่ภายในคู่แท็กนี้ หากหลุดออกไปภายนอก ข้อมูลจะไม่ถูกส่งไปยังเซิร์ฟเวอร์</li>
+        <li><b><code>action</code>:</b> เปรียบเสมือน "ที่อยู่ปลายทางบนหน้าซองจดหมาย" ระบุ URL หรือเส้นทางของไฟล์ฝั่ง Server (เช่น PHP/Backend) ที่จะรับข้อมูลไปประมวลผล</li>
+        <li><b><code>label</code> คู่กับ <code>input</code>:</b> การเชื่อมโยง <code>&lt;label for="id_name"&gt;</code> กับ <code>&lt;input id="id_name"&gt;</code> ช่วยให้เมื่อคลิกที่ตัวอักษร ข้อความเคอร์เซอร์จะกระโดดเข้าช่องกรอกทันที เพิ่มประสบการณ์ผู้ใช้งาน (UX) บนหน้าจอมือถือ</li>
+    </ul>
+
+    <div class="section-title">2. เปรียบเทียบวิธีการส่งข้อมูล (Method: GET vs POST)</div>
+    <p>การเลือกใช้ Method ระบุวิธีการจัดส่งข้อมูล มีมาตรฐาน 2 รูปแบบหลัก ดังนี้:</p>
+    <table>
+        <tr>
+            <th>คุณสมบัติ</th>
+            <th>GET</th>
+            <th>POST</th>
+        </tr>
+        <tr>
+            <td>ลักษณะการส่ง</td>
+            <td>เปรียบเสมือน "ไปรษณียบัตร" แปะข้อมูลต่อท้าย URL</td>
+            <td>เปรียบเสมือน "ซองจดหมายปิดผนึก" ซ่อนข้อมูลไว้ในเบื้องหลัง</td>
+        </tr>
+        <tr>
+            <td>ความปลอดภัย</td>
+            <td>เห็นข้อมูลชัดเจนบน URL ไม่เหมาะกับข้อมูลลับ</td>
+            <td>มีความปลอดภัยสูง ซ่อนข้อมูลส่วนตัวหรือรหัสผ่านได้</td>
+        </tr>
+        <tr>
+            <td>ปริมาณข้อมูล</td>
+            <td>จำกัดปริมาณข้อความ</td>
+            <td>ไม่จำกัดปริมาณข้อมูล สามารถส่งไฟล์ขนาดใหญ่ได้</td>
+        </tr>
+        <tr>
+            <td>ความจำเป็น / การนำไปใช้</td>
+            <td>เหมาะสำหรับคำค้นหา (Search Query) ที่แชร์ลิงก์ได้</td>
+            <td>เหมาะสำหรับระบบเข้าสู่ระบบ สมัครสมาชิก หรือส่งข้อมูลลับ</td>
+        </tr>
+    </table>
+
+    <div class="section-title">3. ประเภทของช่องรับข้อมูล (Input Types)</div>
+    <p>แท็ก <code>&lt;input&gt;</code> เปรียบเสมือน "กิ้งก่าเปลี่ยนสี" ที่เปลี่ยนรูปแบบตามค่าของแอตทริบิวต์ <code>type</code> โดยแบ่งเป็นกลุ่มหลักดังนี้:</p>
+    <ul>
+        <li><b>กลุ่มช่องกรอกข้อความ (Text-based Inputs):</b>
+            <ul>
+                <li><code>type="text"</code>: ช่องกรอกข้อความบรรทัดเดียวมาตรฐาน สำหรับข้อมูลทั่วไป เช่น ชื่อ-นามสกุล</li>
+                <li><code>type="password"</code>: พรางตัวอักษรเป็นจุดกลมดำเพื่อป้องกันการแอบมองรหัสผ่าน</li>
+                <li><code>type="email"</code>: ตรวจสอบโครงสร้างอีเมล (ต้องมี @ และโดเมน) และปรับคีย์บอร์ดมือถือให้อัตโนมัติ</li>
+            </ul>
+        </li>
+        <li><b>กลุ่มช่องสำหรับเลือก (Selection-based Inputs):</b>
+            <ul>
+                <li><code>type="radio"</code>: ปุ่มวงกลม บังคับเลือกได้เพียงข้อเดียวเท่านั้น (เช่น เพศ, ไซส์เสื้อ)</li>
+                <li><code>type="checkbox"</code>: กล่องสี่เหลี่ยม เลือกได้หลายข้อพร้อมกัน หรือไม่เลือกเลยก็ได้ (เช่น งานอดิเรก)</li>
+                <li><code>&lt;select&gt;</code> และ <code>&lt;option&gt;</code>: เมนูดรอปดาวน์ (Dropdown) ช่วยประหยัดพื้นที่บนหน้าจอเมื่อมีตัวเลือกจำนวนมาก (เช่น เลือกจังหวัด)</li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="section-title">4. การตรวจสอบความถูกต้องของข้อมูล (Form Validation)</div>
+    <p>ระบบ Built-in Validation ของ HTML5 เปรียบเสมือน "พนักงานตรวจเอกสารอัตโนมัติ" ที่ช่วยป้องกันความเสียหายจากข้อมูลที่ผิดพลาดก่อนส่งไปยังหลังบ้าน:</p>
+    <ul>
+        <li><b><code>required</code>:</b> บังคับว่าต้องกรอกข้อมูล หากปล่อยว่าง เบราว์เซอร์จะระงับการส่งและขึ้นป๊อปอัปเตือนทันที</li>
+        <li><b><code>min</code> และ <code>max</code>:</b> กำหนดขอบเขตค่าต่ำสุดและสูงสุด ใช้กับตัวเลข (<code>type="number"</code>) หรือวันที่ (<code>type="date"</code>) เช่น กำหนดอายุช่วง 18 - 60 ปี</li>
+    </ul>
+
+</div>
+
+</body>
+</html>

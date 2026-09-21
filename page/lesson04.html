@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>บทที่ 4: การจัดรูปแบบเว็บไซต์ด้วย CSS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: "Noto Sans Thai", "Inter", -apple-system, sans-serif;
+        background-color: #f7f4f0;
+        margin: 0;
+        padding: 0 0 60px 0;
+        color: #4a3e3d;
+        line-height: 1.7;
+    }
+
+    .banner {
+        background-color: #6f4e37;
+        color: #faf6f0;
+        padding: 32px 32px;
+        border-bottom: 3px solid #8d6e63;
+    }
+
+    .banner .chapter {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0;
+        letter-spacing: 0.5px;
+    }
+
+    .banner .subtitle {
+        font-size: 16px;
+        margin: 6px 0 0 0;
+        font-weight: 300;
+        opacity: 0.9;
+    }
+
+    .top-bar {
+        padding: 16px 32px 0 32px;
+    }
+
+    .content {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 24px 20px;
+    }
+
+    .section-title {
+        background-color: #e8ded5;
+        color: #5c4033;
+        font-size: 17px;
+        font-weight: 600;
+        padding: 10px 16px;
+        border-radius: 6px;
+        margin: 32px 0 16px 0;
+        border-left: 4px solid #8d6e63;
+    }
+
+    ul {
+        margin: 0;
+        padding-left: 22px;
+        line-height: 1.9;
+    }
+
+    li {
+        margin-bottom: 10px;
+        color: #4a3e3d;
+    }
+
+    code {
+        background-color: #efe8e1;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-family: "Consolas", monospace;
+        color: #7b4b3a;
+        font-size: 0.9em;
+        border: 1px solid #e0d5cb;
+    }
+
+    .btn-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #8d6e63;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: background-color 0.2s ease;
+    }
+
+    .btn-back:hover {
+        background-color: #6f4e37;
+    }
+
+    .code-shot {
+        display: block;
+        max-width: 100%;
+        margin: 20px auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+
+    .code-caption {
+        text-align: center;
+        font-size: 13px;
+        color: #8d6e63;
+        margin-top: -8px;
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+
+<div class="banner">
+    <p class="chapter">บทที่ 4</p>
+    <p class="subtitle">การจัดรูปแบบเว็บไซต์ด้วย CSS</p>
+</div>
+<div class="top-bar">
+    <a class="btn-back" href="../index.html">
+        <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+    </a>
+</div>
+
+<div class="content">
+
+    <div class="section-title">1. พื้นฐานและการเชื่อมต่อ CSS</div>
+    <ul>
+        <li><b>Internal CSS (สไตล์ชีตภายใน):</b> เขียนแทรกในไฟล์ HTML ภายใต้แท็ก <code>&lt;style&gt;</code> เหมาะกับเว็บหน้าเดียวหรือขนาดเล็ก แต่ส่งผลให้เกิดโค้ดซ้ำซ้อนถ้ามีหลายหน้า</li>
+        <li><b>External CSS (สไตล์ชีตภายนอก):</b> แยกไฟล์ต่างหากเป็นนามสกุล .css แล้วดึงมาใช้ผ่านแท็ก <code>&lt;link&gt;</code> เป็นวิธีมาตรฐานระดับมืออาชีพเพราะช่วยให้แก้ไขจุดเดียวแล้วอัปเดตพร้อมกันทั้งเว็บไซต์</li>
+        <li><b>CSS Selectors:</b> เครื่องมือชี้เป้าหมายเพื่อตกแต่งองค์ประกอบ ประกอบด้วย Tag Selector (กว้างที่สุด เปลี่ยนทุกแท็กที่ระบุ), Class Selector (ใช้จุด <code>.</code> นำหน้า เหมาะสำหรับจัดกลุ่มเฉพาะกิจ) และ ID Selector (ใช้แฮชแท็ก <code>#</code> เจาะจงที่สุด ห้ามซ้ำกันในหนึ่งหน้า)</li>
+    </ul>
+
+    <img src="c:\Users\pc\Downloads\1_x4YuG4eImeNvrvL3_gA_wQ.png" alt="ตัวอย่างโค้ด Internal CSS" class="code-shot">
+    <p class="code-caption">ตัวอย่างการเขียน Internal CSS ภายในแท็ก &lt;style&gt;</p>
+
+    <div class="section-title">2. ระบบ Box Model (ทฤษฎีกล่อง)</div>
+    <p>เบราว์เซอร์จะมองทุกองค์ประกอบบนหน้าเว็บเป็นกล่องสี่เหลี่ยม ซึ่งประกอบด้วยพื้นที่ 4 ชั้นหลักจากด้านในออกด้านนอก</p>
+    <ul>
+        <li><b>Content:</b> พื้นที่เนื้อหาที่แท้จริง กำหนดขนาดได้ด้วยความกว้าง (Width) และความสูง (Height)</li>
+        <li><b>Padding (พื้นที่ใน):</b> ระยะห่างระหว่างเนื้อหากับเส้นขอบกล่อง เปรียบเสมือน "พลาสติกกันกระแทก"</li>
+        <li><b>Border (เส้นขอบ):</b> กำแพงกั้นระหว่างพื้นที่ด้านในและด้านนอก เปรียบเสมือน "กรอบรูป"</li>
+        <li><b>Margin (พื้นที่นอก):</b> ระยะห่างภายนอกกล่องที่ใช้ผลักกล่องอื่นออกไป เปรียบเสมือน "การเว้นระยะห่างทางสังคม"</li>
+    </ul>
+
+        <img src="c:\Users\pc\Downloads\1_PGOsy3OmNgYwHaomZbYePQ.png" alt="ตัวอย่างโค้ด Internal CSS" class="code-shot">
+    <p class="code-caption">ตัวอย่างการเขียน Box Model (ทฤษฎีกล่อง) </p>
+
+    <div class="section-title">3. การจัดตำแหน่ง (Layout Positioning)</div>
+    <p>เทคนิคควบคุมพิกัดและการจัดวางกล่องข้อความหรือวัตถุต่าง ๆ บนหน้าจอ</p>
+    <ul>
+        <li><b>Display:</b> กำหนดพฤติกรรมการกินพื้นที่ของกล่อง เช่น Block (จองพื้นที่เต็ม 100% ของบรรทัด), Inline (ใช้พื้นที่เท่าขนาดเนื้อหาจริง วางเรียงต่อกันได้) และ Flex (เวทมนตร์จัดเลย์เอาต์ยุคใหม่ที่ช่วยจัดเรียงวัตถุภายในให้ยืดหยุ่น กระจายตัว หรืออยู่กึ่งกลางได้อย่างง่ายดาย)</li>
+        <li><b>Position:</b> ดึงกล่องหลุดออกจากระบบระเบียบปกติเพื่อระบุพิกัดตรง ๆ เช่น Relative (ขยับจากจุดเดิมโดยเว้นที่ว่างเดิมไว้), Absolute (หลุดจากวงโคจรปกติเพื่อแปะทับบนกล่องแม่) และ Fixed (ตอกตะปูยึดติดกับหน้าจอ ไม่ขยับไปไหนแม้จะเลื่อนสกอลล์เม้าส์ เช่น แถบเมนู Navbar ด้านบน)</li>
+    </ul>
+
+    <img src="c:\Users\pc\Downloads\images.jpg" alt="ตัวอย่างโค้ด Internal CSS" class="code-shot">
+    <p class="code-caption">ตัวอย่างการเขียน การจัดตำแหน่ง (Layout Positioning) </p>
+
+</div>
+
+</body>
+</html>

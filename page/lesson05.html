@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>บทที่ 5: การจัดการข้อความและสื่อมัลติมีเดีย</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: "Noto Sans Thai", "Inter", -apple-system, sans-serif;
+        background-color: #f7f4f0;
+        margin: 0;
+        padding: 0 0 60px 0;
+        color: #4a3e3d;
+        line-height: 1.7;
+    }
+
+    .banner {
+        background-color: #6f4e37;
+        color: #faf6f0;
+        padding: 32px 32px;
+        border-bottom: 3px solid #8d6e63;
+    }
+
+    .banner .chapter {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0;
+        letter-spacing: 0.5px;
+    }
+
+    .banner .subtitle {
+        font-size: 16px;
+        margin: 6px 0 0 0;
+        font-weight: 300;
+        opacity: 0.9;
+    }
+
+    .top-bar {
+        padding: 16px 32px 0 32px;
+    }
+
+    .btn-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #8d6e63;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: background-color 0.2s ease;
+    }
+
+    .btn-back:hover {
+        background-color: #6f4e37;
+    }
+
+    .content {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 24px 20px;
+    }
+
+    .section-title {
+        background-color: #e8ded5;
+        color: #5c4033;
+        font-size: 17px;
+        font-weight: 600;
+        padding: 10px 16px;
+        border-radius: 6px;
+        margin: 32px 0 16px 0;
+        border-left: 4px solid #8d6e63;
+    }
+
+    ul {
+        margin: 0;
+        padding-left: 22px;
+    }
+
+    li {
+        margin-bottom: 10px;
+        color: #4a3e3d;
+    }
+
+    .page-ref {
+        color: #a08d85;
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+    code {
+        background-color: #efe8e1;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-family: "Consolas", monospace;
+        color: #7b4b3a;
+        font-size: 0.9em;
+        border: 1px solid #e0d5cb;
+    }
+</style>
+</head>
+<body>
+
+<div class="banner">
+    <p class="chapter">บทที่ 5</p>
+    <p class="subtitle">การจัดการข้อความและสื่อมัลติมีเดีย</p>
+</div>
+<div class="top-bar">
+    <a class="btn-back" href="index.html">
+        <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+    </a>
+</div>
+
+<div class="content">
+
+    <div class="section-title">1. การจัดการข้อความระดับสูง</div>
+    <ul>
+        <li><b>การกำหนดสี (color) และขนาด (font-size):</b> ใช้คำสั่ง <code>color</code> กำหนดสีตัวอักษรได้ทั้งชื่อสีภาษาอังกฤษ, Hex Code (เช่น <code>#FF5733</code>) หรือ RGB และใช้ <code>font-size</code> กำหนดขนาด โดยควรคำนึงถึงลำดับความสำคัญทางสายตา (Visual Hierarchy) <span class="page-ref">(p. 3)</span></li>
+        <li><b>การเชื่อมต่อ Google Fonts:</b> บริการฟอนต์บนคลาวด์ฟรี ช่วยให้เว็บไซต์แสดงฟอนต์สวยงามได้ทุกเครื่อง โดยใช้แท็ก <code>&lt;link&gt;</code> ในส่วน <code>&lt;head&gt;</code> เพื่อดึงฟอนต์มา แล้วเรียกใช้ด้วย <code>font-family</code> ใน CSS <span class="page-ref">(p. 3-4)</span></li>
+    </ul>
+
+        <img src="c:\Users\pc\Downloads\v4-460px-Use-Font-Color-Tags-in-HTML-Step-3-Version-3.jpg" alt="ตัวอย่างโค้ด Internal CSS" class="code-shot">
+    <p class="code-caption">ตัวอย่างการเขียน การแทรกรูปภาพและสื่อ </p>
+
+    <div class="section-title">2. การแทรกรูปภาพและสื่อ</div>
+    <ul>
+        <li><b>แท็ก &lt;img&gt;:</b> แท็กเดี่ยว (Empty Tag) ไม่มีแท็กปิด ใช้แสดงรูปภาพ ต้องทำงานร่วมกับแอตทริบิวต์ <code>src</code> เพื่อระบุที่อยู่ไฟล์ภาพเสมอ <span class="page-ref">(p. 6)</span></li>
+        <li><b>Relative Path vs Absolute Path:</b> Relative คือระบุที่อยู่ไฟล์ในโฟลเดอร์โปรเจกต์ตัวเอง (เช่น <code>src="images/coffee.jpg"</code>) เหมาะกับรูปที่เก็บไว้เอง ส่วน Absolute คือ URL เต็มรูปแบบขึ้นต้นด้วย <code>https://</code> ชี้ไปยังรูปบนเว็บอื่น <span class="page-ref">(p. 7)</span></li>
+        <li><b>การจัดการขนาดไฟล์ (Image Optimization):</b> ควรย่อขนาดภาพก่อนใช้งานเสมอ (ความกว้างไม่ควรเกิน 1200px) และเลือกสกุลไฟล์ให้เหมาะกับงาน เช่น <code>.jpg</code> สำหรับภาพถ่าย, <code>.png</code> สำหรับภาพที่ต้องการพื้นหลังโปร่งใส, <code>.webp</code> สำหรับไฟล์ยุคใหม่ที่บีบอัดเล็กแต่คมชัด <span class="page-ref">(p. 8)</span></li>
+    </ul>
+
+    <img src="c:\Users\pc\Downloads\images (2).jpg" alt="ตัวอย่างโค้ด Internal CSS" class="code-shot">
+    <p class="code-caption">ตัวอย่างการเขียน การจัดการข้อความระดับสูง
+
+    <div class="section-title">3. การจัดการวิดีโอและเสียง</div>
+    <ul>
+        <li><b>แท็ก &lt;video&gt; และ &lt;audio&gt;:</b> HTML5 มีแท็กเฉพาะสำหรับสื่อมัลติมีเดีย ใช้งานคล้ายกัน ต้องระบุ <code>src</code> เพื่อชี้ไปยังไฟล์สื่อ <span class="page-ref">(p. 9)</span></li>
+        <li><b>แอตทริบิวต์ controls:</b> หัวใจสำคัญที่สั่งให้เบราว์เซอร์แสดงแผงควบคุม (เล่น/หยุด, แถบเวลา, ปรับเสียง, ขยายเต็มจอ) หากไม่ใส่ วิดีโอจะเป็นเพียงภาพนิ่งกดเล่นไม่ได้ <span class="page-ref">(p. 9-10)</span></li>
+    </ul>
+
+    <div class="section-title">4. การสร้างเฟรมด้วย Inline Frame (Iframe)</div>
+    <ul>
+        <li><b>แท็ก &lt;iframe&gt;:</b> ใช้ดึงเนื้อหาจากเว็บไซต์อื่นมาแสดงในหน้าเราแบบ "เจาะหน้าต่าง" โดยไม่ต้องพาผู้ใช้ออกจากเว็บ ต้องระบุ <code>src</code> เป็น Absolute Path เสมอ <span class="page-ref">(p. 11)</span></li>
+        <li><b>แอตทริบิวต์สำคัญ:</b> <code>width</code>/<code>height</code> กำหนดขนาดกรอบ, <code>title</code> อธิบายเนื้อหาเพื่อการเข้าถึง (Accessibility), <code>allowfullscreen</code> อนุญาตให้ขยายเต็มจอ <span class="page-ref">(p. 11)</span></li>
+        <li><b>การประยุกต์ใช้จริง:</b> นิยมใช้ฝังวิดีโอ YouTube (Share → Embed) และแผนที่ Google Maps (Share → Embed a map) เพื่อไม่ต้องเปลืองพื้นที่เซิร์ฟเวอร์ของตัวเอง <span class="page-ref">(p. 12)</span></li>
+    </ul>
+
+            <img src="c:\Users\pc\Downloads\รรรรร.png" alt="ตัวอย่างโค้ด Internal CSS" class="code-shot">
+    <p class="code-caption">ตัวอย่างการเขียน การสร้างเฟรมด้วย Inline Frame (Iframe)
+
+</div>
+
+</body>
+</html>

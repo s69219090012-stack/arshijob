@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>บทที่ 2: หลักการออกแบบเว็บไซต์</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: "Noto Sans Thai", "Inter", -apple-system, sans-serif;
+        background-color: #f7f4f0;
+        margin: 0;
+        padding: 0 0 60px 0;
+        color: #4a3e3d;
+        line-height: 1.7;
+    }
+
+    .banner {
+        background-color: #6f4e37;
+        color: #faf6f0;
+        padding: 32px 32px;
+        border-bottom: 3px solid #8d6e63;
+    }
+
+    .banner .chapter {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0;
+        letter-spacing: 0.5px;
+    }
+
+    .banner .subtitle {
+        font-size: 16px;
+        margin: 6px 0 0 0;
+        font-weight: 300;
+        opacity: 0.9;
+    }
+
+    .top-bar {
+        padding: 16px 32px 0 32px;
+    }
+
+    .btn-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #8d6e63;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: background-color 0.2s ease;
+    }
+
+    .btn-back:hover {
+        background-color: #6f4e37;
+    }
+
+    .content {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 24px 20px;
+    }
+
+    .section-title {
+        background-color: #e8ded5;
+        color: #5c4033;
+        font-size: 17px;
+        font-weight: 600;
+        padding: 10px 16px;
+        border-radius: 6px;
+        margin: 32px 0 16px 0;
+        border-left: 4px solid #8d6e63;
+    }
+
+    ul {
+        margin: 0;
+        padding-left: 22px;
+    }
+
+    li {
+        margin-bottom: 10px;
+        color: #4a3e3d;
+    }
+
+    code {
+        background-color: #efe8e1;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-family: "Consolas", monospace;
+        color: #7b4b3a;
+        font-size: 0.9em;
+        border: 1px solid #e0d5cb;
+    }
+</style>
+</head>
+<body>
+
+<div class="banner">
+    <p class="chapter">บทที่ 2</p>
+    <p class="subtitle">หลักการออกแบบเว็บไซต์</p>
+</div>
+<div class="top-bar">
+    <a class="btn-back" href="../index.html">
+        <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+    </a>
+</div>
+
+<div class="content">
+
+    <div class="section-title">1. หลักการออกแบบเว็บไซต์</div>
+    <p>การออกแบบเว็บไซต์ไม่ใช่แค่เรื่องความสวยงาม แต่เป็นการวางแผนเชิงกลยุทธ์เพื่อสร้าง UI ที่ดีควบคู่กับ UX ที่ดี ซึ่งส่งผลต่อ Bounce Rate และ Conversion Rate ของธุรกิจ</p>
+    <ul>
+        <li><b>ทฤษฎีการใช้สี (Color Theory):</b> สีมีผลต่ออารมณ์และการรับรู้ของผู้ใช้ เป็นเครื่องมือสื่อสารอัตลักษณ์แบรนด์ เช่น สีน้ำเงิน = ความน่าเชื่อถือ (ธนาคาร/IT), สีแดง = กระตุ้นความสนใจ (อาหาร/ปุ่ม CTA), สีเขียว = ธรรมชาติ/ปลอดภัย, สีดำ = หรูหรา/ทันสมัย นอกจากนี้ยังมีหลักการจับคู่สี เช่น สีคู่ตรงข้าม สีโทนเดียวกัน และสีข้างเคียง</li>
+        <li><b>การเลือกใช้ตัวอักษร (Typography):</b> ต้องคำนึงถึงทั้งความสวยงามและการอ่านง่าย (Readability) รวมถึงการเข้าถึงสำหรับทุกคน (Accessibility) โดยเช็ค Contrast Ratio ระหว่างตัวอักษรกับพื้นหลัง และใช้หลัก Visual Hierarchy ผ่านการกำหนด Size & Weight และ Spacing/White Space</li>
+    </ul>
+
+    <div class="section-title">2. องค์ประกอบและ Layout</div>
+    <p>แบ่งหน้าเว็บมาตรฐานเป็น 3 ส่วนหลัก:</p>
+    <ul>
+        <li><b>Header/Navigation Bar:</b> โลโก้ เมนู ปุ่ม Login ช่องค้นหา ตามหลัก Information Architecture</li>
+        <li><b>Content Area:</b> พื้นที่แสดงเนื้อหาหลัก ตามหลัก Visual Flow (บนลงล่าง ซ้ายไปขวา)</li>
+        <li><b>Footer:</b> ข้อมูลติดต่อ นโยบายความเป็นส่วนตัว ลิงก์โซเชียลมีเดีย</li>
+    </ul>
+
+    <div class="section-title">3. ขั้นตอนการทำ Prototype</div>
+    <p>ก่อนเขียนโค้ดจริง ต้องทำแบบจำลองก่อน 2 ระดับ:</p>
+    <ul>
+        <li><b>Low-fidelity Wireframe:</b> ร่างโครงสร้างง่ายๆ ด้วยเส้น/สีเทา เน้นตำแหน่งองค์ประกอบ (เปรียบเหมือนแบบแปลนบ้าน)</li>
+        <li><b>High-fidelity Mockup:</b> ใส่สี รูปภาพ ฟอนต์ ไอคอน ใกล้เคียงของจริง (เปรียบเหมือนการตกแต่งภายใน)</li>
+    </ul>
+
+    <div class="section-title">4. เทคนิคการออกแบบสมัยใหม่</div>
+    <ul>
+        <li><b>Responsive Design:</b> ปรับการแสดงผลตามขนาดหน้าจออัตโนมัติ ใช้เทคนิค Flexible Grid, Flexible Images, CSS Media Queries</li>
+        <li><b>Mobile First Design:</b> ออกแบบจากหน้าจอมือถือก่อนแล้วขยายไปเดสก์ท็อป เน้น Content-First ลดปัญหา Feature Bloat</li>
+    </ul>
+
+</div>
+
+</body>
+</html>

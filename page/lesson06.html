@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>บทที่ 6: การสร้างตารางข้อมูล</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: "Noto Sans Thai", "Inter", -apple-system, sans-serif;
+        background-color: #f7f4f0;
+        margin: 0;
+        padding: 0 0 60px 0;
+        color: #4a3e3d;
+        line-height: 1.7;
+    }
+
+    .banner {
+        background-color: #6f4e37;
+        color: #faf6f0;
+        padding: 32px 32px;
+        border-bottom: 3px solid #8d6e63;
+    }
+
+    .banner .chapter {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0;
+        letter-spacing: 0.5px;
+    }
+
+    .banner .subtitle {
+        font-size: 16px;
+        margin: 6px 0 0 0;
+        font-weight: 300;
+        opacity: 0.9;
+    }
+
+    .top-bar {
+        padding: 16px 32px 0 32px;
+    }
+
+    .btn-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #8d6e63;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: background-color 0.2s ease;
+    }
+
+    .btn-back:hover {
+        background-color: #6f4e37;
+    }
+
+    .content {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 24px 20px;
+    }
+
+    .section-title {
+        background-color: #e8ded5;
+        color: #5c4033;
+        font-size: 17px;
+        font-weight: 600;
+        padding: 10px 16px;
+        border-radius: 6px;
+        margin: 32px 0 16px 0;
+        border-left: 4px solid #8d6e63;
+    }
+
+    ul {
+        margin: 0;
+        padding-left: 22px;
+    }
+
+    li {
+        margin-bottom: 10px;
+        color: #4a3e3d;
+    }
+
+    code {
+        background-color: #efe8e1;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-family: "Consolas", monospace;
+        color: #7b4b3a;
+        font-size: 0.9em;
+        border: 1px solid #e0d5cb;
+    }
+</style>
+</head>
+<body>
+
+<div class="banner">
+    <p class="chapter">บทที่ 6</p>
+    <p class="subtitle">การสร้างตารางข้อมูล</p>
+</div>
+<div class="top-bar">
+    <a class="btn-back" href="../index.html">
+        <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+    </a>
+</div>
+
+<div class="content">
+
+    <div class="section-title">1. โครงสร้างพื้นฐานของตาราง</div>
+    <ul>
+        <li><b>แท็ก &lt;table&gt;:</b> แท็กหลักที่ครอบตารางทั้งหมด ภายในประกอบด้วยแถวและเซลล์ที่จัดเรียงเป็นแนวตั้ง-แนวนอน คล้ายตารางในโปรแกรมสเปรดชีต</li>
+        <li><b>แท็ก &lt;tr&gt; (Table Row):</b> ใช้สร้างแต่ละแถวของตาราง หนึ่งคู่แท็ก <code>&lt;tr&gt;...&lt;/tr&gt;</code> แทนหนึ่งแถว</li>
+        <li><b>แท็ก &lt;th&gt; (Table Header):</b> ใช้สร้างเซลล์หัวตาราง ตัวอักษรจะหนาและจัดกึ่งกลางโดยอัตโนมัติ</li>
+        <li><b>แท็ก &lt;td&gt; (Table Data):</b> ใช้สร้างเซลล์ข้อมูลทั่วไปภายในแถว</li>
+    </ul>
+
+                <img src="c:\Users\pc\Downloads\รรรรรรร.jpg" alt="ตัวอย่างโค้ด Internal CSS" class="code-shot">
+    <p class="code-caption">ตัวอย่างการเขียน โครงสร้างพื้นฐานของตาราง
+
+    <div class="section-title">2. การรวมเซลล์ (Merge Cells)</div>
+    <ul>
+        <li><b>colspan:</b> รวมเซลล์ในแนวนอน โดยระบุจำนวนคอลัมน์ที่ต้องการรวม เช่น <code>&lt;td colspan="2"&gt;</code></li>
+        <li><b>rowspan:</b> รวมเซลล์ในแนวตั้ง โดยระบุจำนวนแถวที่ต้องการรวม เช่น <code>&lt;td rowspan="2"&gt;</code></li>
+    </ul>
+
+                    <img src="c:\Users\pc\Downloads\coww.jpg" alt="ตัวอย่างโค้ด Internal CSS" class="code-shot">
+    <p class="code-caption">ตัวอย่างการเขียน การรวมเซลล์
+
+    <div class="section-title">3. การจัดรูปแบบตารางด้วย CSS</div>
+    <ul>
+        <li><b>border-collapse:</b> ใช้ค่า <code>collapse</code> เพื่อรวมเส้นขอบของแต่ละเซลล์ให้เป็นเส้นเดียว ไม่ให้ซ้อนกันเป็นเส้นคู่</li>
+        <li><b>padding:</b> กำหนดระยะห่างระหว่างข้อมูลกับขอบเซลล์ ให้ตารางอ่านง่ายไม่อึดอัด</li>
+        <li><b>สลับสีแถว (Zebra Stripes):</b> ใช้ตัวเลือก <code>:nth-child(even)</code> เพื่อไล่สีพื้นหลังแถวคู่-แถวคี่สลับกัน ช่วยให้ไล่สายตาอ่านข้อมูลตามแนวนอนได้ง่ายขึ้น</li>
+        <li><b>hover effect:</b> ใช้ <code>tr:hover</code> เปลี่ยนสีพื้นหลังเมื่อนำเมาส์ชี้แถวนั้น ช่วยเพิ่มการตอบสนองเชิงโต้ตอบ (UX)</li>
+    </ul>
+
+                        <img src="c:\Users\pc\Downloads\coll.jpg" alt="ตัวอย่างโค้ด Internal CSS" class="code-shot">
+    <p class="code-caption">ตัวอย่างการเขียน การจัดรูปแบบตารางด้วย CSS
+
+    <div class="section-title">4. ตารางที่รองรับทุกขนาดหน้าจอ (Responsive Table)</div>
+    <ul>
+        <li><b>overflow-x: auto:</b> ใส่ในตัวครอบตาราง (div) เพื่อให้ตารางเลื่อนดูแนวนอนได้บนจอมือถือ แทนที่จะบีบข้อมูลจนอ่านไม่ออก</li>
+        <li><b>table-layout: fixed:</b> ควบคุมให้แต่ละคอลัมน์แบ่งพื้นที่ตามสัดส่วนที่กำหนดไว้ล่วงหน้า ทำให้ตารางแสดงผลสม่ำเสมอ ไม่ขยายตามความยาวเนื้อหา</li>
+    </ul>
+
+                            <img src="c:\Users\pc\Downloads\g-hkk.jpg" alt="ตัวอย่างโค้ด Internal CSS" class="code-shot">
+    <p class="code-caption">ตัวอย่างการเขียน ตารางที่รองรับทุกขนาดหน้าจอ
+
+</div>
+
+</body>
+</html>
