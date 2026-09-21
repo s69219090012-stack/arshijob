@@ -1,0 +1,165 @@
+body {
+    font-family: "Sarabun", "Tahoma", sans-serif;
+    background-color: #f1f3f6;
+    margin: 0;
+    padding: 0;
+}
+
+/* แถบด้านบน */
+.top-bar {
+    width: 820px;
+    max-width: 90%;
+    height: 30px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ปุ่มประวัติผู้จัดทำ */
+/* รองรับทั้ง .btn-history และ .history-btn */
+.btn-history,
+.history-btn {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    height: fit-content;
+}
+
+.btn-history:hover,
+.history-btn:hover {
+    background-color: #138496;
+}
+
+
+/* หัวข้อ */
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin: 10px 0 18px 0;
+}
+
+
+/* กล่องรวมบทเรียน */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+
+    width: 820px;
+    max-width: 90%;
+
+    margin: 0 auto;
+}
+
+
+/* การ์ด */
+.card {
+    background-color: #ffffff;
+
+    border-radius: 7px;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+
+    padding: 16px;
+
+    min-height: 115px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ชื่อบทเรียน */
+.card h2 {
+    color: #1683e8;
+
+    font-size: 15px;
+
+    margin: 0 0 8px 0;
+
+    line-height: 1.35;
+}
+
+
+/* รายละเอียด */
+.card p {
+    color: #555;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    margin: 0 0 12px 0;
+
+    flex-grow: 1;
+}
+
+
+/* ปุ่มเข้าสู่บทเรียน */
+.enter-btn {
+    background-color: #28a745;
+
+    color: white;
+
+    border: none;
+
+    padding: 8px;
+
+    border-radius: 4px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    width: 100%;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    display: block;
+
+    box-sizing: border-box;
+}
+
+.enter-btn:hover {
+    background-color: #218838;
+}
+
+
+/* Tablet */
+@media (max-width: 900px) {
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* โทรศัพท์ */
+@media (max-width: 600px) {
+
+    .top-bar {
+        width: 90%;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+}
